@@ -1,21 +1,24 @@
 "use strict";
 /* 기본(Basic Type) 타입 */
-// String Type.
+// 문자열 타입 : String Type.
 const message = "Hello World";
 console.log(message);
 // Number Type.
 let count = 1;
 // Type Error.
 // count += '1'
-// Number Array Type.
+// 숫자 타입 : Number Array Type.
 const numbers = [1, 2, 3];
-// String Array Type.
+// 문자열 배열 타입 : String Array Type.
 const messages = ["Hello", "World"];
+// 논리 값 타입 : TureFalse boolean Type.
+const TrueFalse = false;
+// 조건문에서 OR 연산자를 '||' 으로 표현하는 것과 비슷합니다.
 // String Or Undefined Type.
-// 조건문에서 OR 연산자를 '||' 으로 표현하는 것과 비슷하다.
 let StringOrUndefined = undefined;
 // Number Or Null Type.
 let NumberOrNull = null;
+// Value Type.
 let Energy;
 Energy = "Hydrogen";
 // Type Error.
@@ -90,6 +93,7 @@ const wrapped = wrap(10);
 const items = {
     list: ["a", "b", "c"],
 };
+// Queue : 선입선출(First In First Out)
 class Queue {
     constructor() {
         this.list = [];
