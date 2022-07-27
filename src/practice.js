@@ -35,6 +35,7 @@ function SumArray(numbers) {
 }
 const total = SumArray([1, 2, 3, 4, 5]);
 console.log(total);
+/* 클래스(Class) */
 class Circle {
     constructor(radius) {
         this.radius = radius;
@@ -56,3 +57,23 @@ const shapes = [new Circle(10), new Rectangle(15, 20)];
 shapes.forEach((shape) => {
     console.log(shape.getArea());
 });
+const person = {
+    name: "김이나",
+    age: 1,
+};
+const expert = {
+    name: "김이나 개발자",
+    techs: ["C#", "TypeScript"],
+};
+const people = [person, expert];
+const Galaxy = {
+    device: "SmartPhone",
+    company: "Samsung",
+    model: "Galaxy",
+};
+const iPhone = {
+    device: "SmartPhone",
+    company: "Apple",
+    model: "iPhone",
+};
+const phone = [Galaxy, iPhone];

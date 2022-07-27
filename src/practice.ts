@@ -55,6 +55,7 @@ interface Shape {
   getArea(): number;
 }
 
+/* 클래스(Class) */
 class Circle implements Shape {
   // implements 키워드를 사용하여 해당 클래스가 Shape Interface의 조건을 충족하겠다는 것을 명시합니다.
   radius: number;
@@ -86,3 +87,53 @@ const shapes: Shape[] = [new Circle(10), new Rectangle(15, 20)];
 shapes.forEach((shape) => {
   console.log(shape.getArea());
 });
+
+interface Person {
+  name: string;
+  // ? : Optional Field
+  age?: number;
+}
+
+// 다른 언어와 마찬가지로 인터페이스가 인터페이스를 상속 받을 수 있습니다.
+interface Developer extends Person {
+  techs: string[];
+}
+
+const person: Person = {
+  name: "김이나",
+  age: 1,
+};
+
+const expert: Developer = {
+  name: "김이나 개발자",
+  techs: ["C#", "TypeScript"],
+};
+
+const people: Person[] = [person, expert];
+
+/* Type Alias */
+type Computer = {
+  device: string;
+};
+
+// & 는 Intersection 으로서 두개 이상의 타입들을 합쳐줍니다.
+// Interface extends 역할
+type SmartPhone = Computer & {
+  company: string;
+  model: string;
+};
+
+const Galaxy: SmartPhone = {
+  device: "SmartPhone",
+  company: "Samsung",
+  model: "Galaxy",
+};
+
+const iPhone: SmartPhone = {
+  device: "SmartPhone",
+  company: "Apple",
+  model: "iPhone",
+};
+
+type Phone = Computer[];
+const phone: Phone = [Galaxy, iPhone];
