@@ -1,4 +1,5 @@
 "use strict";
+/* 기본(Basic Type) 타입 */
 // String Type.
 const message = "Hello World";
 console.log(message);
@@ -19,3 +20,39 @@ let Energy;
 Energy = "Hydrogen";
 // Type Error.
 // Energy = "Fire";
+/* 함수 타입(Function Type) */
+// function AnyFunc(매개 변수 : 타입) : number(반환 타입)
+function Sum(x, y) {
+    return x + y;
+}
+Sum(1, 2);
+// 반환 타입이 없을 경우 void
+function PrintSum(x, y) {
+    console.log(x + y);
+}
+function SumArray(numbers) {
+    return numbers.reduce((acc, current) => acc + current, 0);
+}
+const total = SumArray([1, 2, 3, 4, 5]);
+console.log(total);
+class Circle {
+    constructor(radius) {
+        this.radius = radius;
+    }
+    getArea() {
+        return this.radius * this.radius * Math.PI;
+    }
+}
+class Rectangle {
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+    getArea() {
+        return this.width * this.height;
+    }
+}
+const shapes = [new Circle(10), new Rectangle(15, 20)];
+shapes.forEach((shape) => {
+    console.log(shape.getArea());
+});
