@@ -137,3 +137,52 @@ const iPhone: SmartPhone = {
 
 type Phone = Computer[];
 const phone: Phone = [Galaxy, iPhone];
+
+/* 제네릭(Generics) */
+// 여러 타입에 대하여 호환을 맞춰야 하는 상황에서 사용하는 문법입니다.
+// any라는 타입이 있지만 모든 타입을 받아들이기 때문에 TypeScript를 사용하는 의미가 없습니다.
+
+// 다양한 타입을 넣을 수도 있고 타입 지원을 지켜낼 수 있습니다.
+function wrap<T>(param: T) {
+  return {
+    param,
+  };
+}
+
+const wrapped = wrap(10);
+
+interface Items<T> {
+  list: T[];
+}
+
+const items: Items<string> = {
+  list: ["a", "b", "c"],
+};
+
+// Queue : 선입선출(First In First Out)
+class Queue<T> {
+  list: T[] = [];
+  get length() {
+    return this.list.length;
+  }
+
+  Enqueue(item: T) {
+    this.list.push(item);
+  }
+
+  Dequeue() {
+    return this.list.shift();
+  }
+}
+
+const queue = new Queue<number>();
+queue.Enqueue(0);
+queue.Enqueue(1);
+queue.Enqueue(2);
+queue.Enqueue(3);
+queue.Enqueue(4);
+console.log(queue.Dequeue());
+console.log(queue.Dequeue());
+console.log(queue.Dequeue());
+console.log(queue.Dequeue());
+console.log(queue.Dequeue());
