@@ -93,5 +93,7 @@ const items: Items<string> = {
 
 * NPM(Node Package Manager) 초기화 : `npm init -y`
 * 타입스크립트(TypeScript) 패키지 설치 : `npm i -g typescript`
+* 타입스크립트 환경설정 : `tsc --init`
+  * [tsconfig.json](./tsconfig.json)
 * 타입스크립트 컴파일(Compile) :  `tsc`
 * 타입스크립트 실행 : `node` [src/practice](./src/practice.ts)
