@@ -180,11 +180,13 @@ class Queue<T> {
 }
 
 const queue = new Queue<number>();
+
 queue.Enqueue(0);
 queue.Enqueue(1);
 queue.Enqueue(2);
 queue.Enqueue(3);
 queue.Enqueue(4);
+
 console.log(queue.Dequeue());
 console.log(queue.Dequeue());
 console.log(queue.Dequeue());
